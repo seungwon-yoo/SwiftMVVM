@@ -34,6 +34,8 @@
 		DC0D725121DFC61D0073A710 /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D724D21DFC61D0073A710 /* RootViewCoordinator.swift */; };
 		DC0D725721DFC81C0073A710 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0D725521DFC81C0073A710 /* HomeViewController.swift */; };
 		DC4775182227406B00E4F913 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4775172227406A00E4F913 /* UIColor+Additions.swift */; };
+		E3DA959C291D34B10045D144 /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DA959B291D34B10045D144 /* UIControl+Extensions.swift */; };
+		E3DA959E291D35200045D144 /* UISegmentedControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DA959D291D35200045D144 /* UISegmentedControl+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		DC0D724D21DFC61D0073A710 /* RootViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
 		DC0D725521DFC81C0073A710 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DC4775172227406A00E4F913 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		E3DA959B291D34B10045D144 /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
+		E3DA959D291D35200045D144 /* UISegmentedControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 		DC0D720F21DFC23B0073A710 /* swiftMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				E3DA959A291D349C0045D144 /* Extensions */,
 				DC0D721C21DFC23D0073A710 /* Info.plist */,
 				DC0D723C21DFC36D0073A710 /* Configs */,
 				DC0D724921DFC5EF0073A710 /* Coordinators */,
@@ -310,6 +315,15 @@
 			isa = PBXGroup;
 			children = (
 				1C4C59222436674500009ABC /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3DA959A291D349C0045D144 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3DA959B291D34B10045D144 /* UIControl+Extensions.swift */,
+				E3DA959D291D35200045D144 /* UISegmentedControl+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -451,6 +465,7 @@
 				87E26FDC27D52982002DF97E /* CardListCell.swift in Sources */,
 				87E26FD627D52952002DF97E /* HomeViewModel.swift in Sources */,
 				DC0D724F21DFC61D0073A710 /* AppCoordinator.swift in Sources */,
+				E3DA959E291D35200045D144 /* UISegmentedControl+Extensions.swift in Sources */,
 				DC0D724E21DFC61D0073A710 /* HomeCoordinator.swift in Sources */,
 				87F55C5B27D58DD2001BE82D /* CustomError.swift in Sources */,
 				DC0D724321DFC4E40073A710 /* Environment.swift in Sources */,
@@ -459,6 +474,7 @@
 				87F55C5927D58C53001BE82D /* ViewState.swift in Sources */,
 				87E26FE027D52CE2002DF97E /* CardService.swift in Sources */,
 				1C4C59252436686500009ABC /* AppController.swift in Sources */,
+				E3DA959C291D34B10045D144 /* UIControl+Extensions.swift in Sources */,
 				64DDF44C22BD6FC400643270 /* SplashController.swift in Sources */,
 				DC0D725721DFC81C0073A710 /* HomeViewController.swift in Sources */,
 				DC0D725021DFC61D0073A710 /* Coordinator.swift in Sources */,

@@ -8,12 +8,12 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class HomeViewController: AppController {
     private lazy var filterSegment: UISegmentedControl = {
         let segmented = UISegmentedControl(items: Types.allCases.map { $0.name })
         segmented.selectedSegmentIndex = 0
-        segmented.addTarget(self, action: #selector(didSelectItem(_:)), for: .valueChanged)
         return segmented
     }()
 
@@ -27,6 +27,7 @@ class HomeViewController: AppController {
     }()
 
     private let viewModel: HomeViewModel
+    private var cancellables: Set<AnyCancellable> = []
 
     required init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -43,11 +44,19 @@ class HomeViewController: AppController {
         super.viewDidLoad()
         setupNavigation()
         configureLayout()
+        bind()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.loadData()
+    }
+    
+    func bind() {
+        filterSegment.selectionPublisher.sink { index in
+            self.viewModel.filterByType(type: Types(rawValue: index) ?? .all)
+        }
+        .store(in: &cancellables)
     }
 }
 
@@ -63,13 +72,6 @@ private extension HomeViewController {
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-    }
-}
-
-// MARK: Actions
-private extension HomeViewController {
-    @objc func didSelectItem(_ selector: UISegmentedControl) {
-        self.viewModel.filterByType(type: Types(rawValue: selector.selectedSegmentIndex) ?? .all)
     }
 }
 
